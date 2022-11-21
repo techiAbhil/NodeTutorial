@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,8 +7,16 @@ export default function (props: any) {
         email: '',
         password: '',
     });
-    const submitHandler = () => {
-        console.log(formState);
+    const submitHandler = async () => {
+        try {
+            await axios.post('http://localhost:5002/api/v1/login', {
+                ...formState,
+            });
+            alert('You have successfully Logedin!');
+        } catch (e) {
+            console.log('error in service = ', e);
+            alert('Something went wrong!');
+        }
     };
     return (
         <div className="Auth-form-container">

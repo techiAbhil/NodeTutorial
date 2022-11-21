@@ -5,12 +5,21 @@
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon app.js"
+        "start": "nodemon app.js",
+        "start:petstore": "nodemon ./petstore-tutorial/app.js"
     },
     "author": "Abhilash",
     "license": "ISC",
     "dependencies": {
+        "@prisma/client": "^4.6.1",
+        "cors": "^2.8.5",
         "express": "^4.18.2",
-        "nodemon": "^2.0.20"
+        "express-async-errors": "^3.1.1",
+        "guid-typescript": "^1.0.9",
+        "nodemon": "^2.0.20",
+        "yup": "^0.32.11"
+    },
+    "devDependencies": {
+        "prisma": "^4.6.1"
     }
 }
